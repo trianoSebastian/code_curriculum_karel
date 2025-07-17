@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karel Programming Curriculum</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            padding: 2rem;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        pre {
+            background-color: #f0f0f0;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        hr {
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Karel Programming Curriculum – Full Exercises & Code</h1>
+
+        <h2> Beginner Level</h2>
+
+        <h3>1. Draw 5 Eggs in a Row</h3>
+        <pre><code>PUTEGG
+MOVE
+PUTEGG
+MOVE
+PUTEGG
+MOVE
+PUTEGG
+MOVE
+PUTEGG</code></pre>
+
+        <h3>2. Egg - Space - Egg - Space - Egg</h3>
+        <pre><code>PUTEGG
+MOVE
+MOVE
+PUTEGG
+MOVE
+MOVE
+PUTEGG</code></pre>
+
+        <h3>3. Draw a 2x2 Egg Square</h3>
+        <pre><code>PUTEGG
+MOVE
+PUTEGG
+LEFTTURN
+MOVE
+LEFTTURN
+PUTEGG
+MOVE
+PUTEGG</code></pre>
+
+        <h3>4. Egg in Every Corner (2x2 grid)</h3>
+        <pre><code>PUTEGG
+MOVE
+MOVE
+PUTEGG
+LEFTTURN
+MOVE
+MOVE
+PUTEGG
+LEFTTURN
+MOVE
+MOVE
+PUTEGG</code></pre>
+
+        <h2> Intermediate Level</h2>
+
+        <h3>5. Draw a 10x10 Square with WHILE Loop</h3>
+        <pre><code>i = 0
+while i < 4:
+    j = 0
+    while j < 9:
+        MOVE
+        j += 1
+    RIGHTTURN
+    i += 1</code></pre>
+
+        <h3>6. Draw a 5x5 Square with FOR Loop</h3>
+        <pre><code>for i in range(4):
+    for j in range(4):
+        MOVE
+    RIGHTTURN</code></pre>
+
+        <h3>7. 10x10 Square (WHILE) + 3x3 Square in Center (FOR)</h3>
+        <pre><code># Draw outer square
+i = 0
+while i < 4:
+    j = 0
+    while j < 9:
+        MOVE
+        j += 1
+    RIGHTTURN
+    i += 1
+
+# Move to center (manually or with more loops)
+MOVE
+MOVE
+MOVE
+MOVE
+RIGHTTURN
+MOVE
+MOVE
+MOVE
+MOVE
+
+# Draw 3x3 inner square
+for i in range(4):
+    for j in range(3):
+        MOVE
+    RIGHTTURN</code></pre>
+
+        <h2> Advanced Level</h2>
+
+        <h3>8. Draw a Big Triangle</h3>
+        <pre><code>PUTEGG
+MOVE
+RIGHTTURN
+MOVE
+PUTEGG
+LEFTTURN
+MOVE
+PUTEGG</code></pre>
+
+        <h3>9. Draw Letter A</h3>
+        <pre><code>PUTEGG
+MOVE
+LEFTTURN
+MOVE
+PUTEGG
+MOVE
+RIGHTTURN
+MOVE
+PUTEGG
+
+LEFTTURN
+MOVE
+MOVE
+RIGHTTURN
+MOVE
+PUTEGG</code></pre>
+
+        <h3>10. Draw Letter K</h3>
+        <pre><code>PUTEGG
+MOVE
+PUTEGG
+MOVE
+PUTEGG
+
+LEFTTURN
+LEFTTURN
+MOVE
+MOVE
+
+RIGHTTURN
+MOVE
+PUTEGG
+
+LEFTTURN
+LEFTTURN
+MOVE
+MOVE
+PUTEGG</code></pre>
+
+        <h3>11. Draw Letter C</h3>
+        <pre><code>PUTEGG
+MOVE
+PUTEGG
+
+LEFTTURN
+MOVE
+PUTEGG
+MOVE
+PUTEGG
+
+RIGHTTURN
+MOVE
+PUTEGG</code></pre>
+
+        <h3>12. Draw Letter E</h3>
+        <pre><code>PUTEGG
+MOVE
+PUTEGG
+MOVE
+PUTEGG
+
+LEFTTURN
+LEFTTURN
+MOVE
+PUTEGG
+
+MOVE
+RIGHTTURN
+MOVE
+RIGHTTURN
+PUTEGG
+
+LEFTTURN
+MOVE
+LEFTTURN
+PUTEGG</code></pre>
+
+        <h3>13. Draw Letter F</h3>
+        <pre><code>PUTEGG
+MOVE
+PUTEGG
+MOVE
+PUTEGG
+
+LEFTTURN
+LEFTTURN
+MOVE
+PUTEGG
+
+MOVE
+RIGHTTURN
+MOVE
+RIGHTTURN
+PUTEGG</code></pre>
+
+        <h3>14. Draw Letter H</h3>
+        <pre><code>PUTEGG
+MOVE
+PUTEGG
+
+RIGHTTURN
+MOVE
+MOVE
+LEFTTURN
+PUTEGG
+
+RIGHTTURN
+MOVE
+PUTEGG
+MOVE
+PUTEGG</code></pre>
+
+        <h2> Master Challenges</h2>
+
+        <h3>15. Draw a Ladder</h3>
+        <pre><code>for i in range(4):
+    PUTEGG
+    MOVE
+
+LEFTTURN
+MOVE
+PUTEGG
+MOVE
+PUTEGG</code></pre>
+
+        <h3>16. Draw a Checkerboard</h3>
+        <pre><code>for i in range(8):
+    for j in range(8):
+        if (i + j) % 2 == 0:
+            PUTEGG
+        MOVE
+    RIGHTTURN
+    MOVE
+    RIGHTTURN</code></pre>
+
+        <h3>17. Draw a House</h3>
+        <pre><code>for i in range(4):
+    for j in range(4):
+        PUTEGG
+        MOVE
+    RIGHTTURN
+
+MOVE
+PUTEGG
+LEFTTURN
+MOVE
+PUTEGG
+RIGHTTURN
+MOVE
+PUTEGG</code></pre>
+
+        <h3>18. Draw the US Flag</h3>
+        <pre><code>for i in range(7):
+    for j in range(13):
+        PUTEGG
+        MOVE
+    RIGHTTURN
+    MOVE
+    RIGHTTURN
+
+LEFTTURN
+LEFTTURN
+MOVE
+MOVE
+LEFTTURN
+MOVE
+for i in range(5):
+    for j in range(5):
+        PUTEGG
+        MOVE
+    RIGHTTURN
+    MOVE
+    RIGHTTURN</code></pre>
+    </div>
+</body>
+</html>
